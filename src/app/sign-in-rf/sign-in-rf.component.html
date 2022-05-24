@@ -1,0 +1,36 @@
+<form class="sign-in-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <h2>Sign in</h2>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username" />
+      </mat-form-field>
+      <pre>{{signInForm.controls.username.errors|json}} </pre>
+      <!-- <mat-error *ngIf="userName.errors?.required">Username is required!</mat-error> -->
+    </div>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+        />
+      </mat-form-field>
+      <!-- <mat-error *ngIf="signInForm.controls.password.touched && !password.valid">
+        <span *ngIf="password.errors?.required">Password is required</span>
+        <span *ngIf="password.errors?.minlength || password.errors?.maxlength">Length from 6 to 32 characters</span>
+        <span *ngIf="!(password.errors?.minlength || password.errors?.maxlength) && password.errors?.pattern">
+          Only alphabet, digit and at least one of !@#$%^&*
+        </span>
+      </mat-error> -->
+    </div>
+    <div class="row-control">
+      <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
+    </div>
+    <div class="row-control row-actions">
+      <button [disabled]="!signInForm.valid" mat-raised-button color="primary" type="submit">Sign in</button>
+    </div>
+    <pre>{{ signInForm.value | json }}</pre>
+  </form>
