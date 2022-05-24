@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class SignInComponent implements OnInit {
 
   userInfo = {
-    userName: 'tiepphan',
+    userName: 'tiepphan2222222222222',
     password: '',
     rememberMe: true,
   };
